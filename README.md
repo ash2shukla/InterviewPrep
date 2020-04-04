@@ -1,3 +1,16 @@
+#### Instructions
+
+```bash
+cd InterviewPrep
+
+conda env create -f environment.yml
+
+conda activate py38-base
+
+jupyter-notebook
+```
+
+
 # Ongoing Stuff
 
 ## DSA
