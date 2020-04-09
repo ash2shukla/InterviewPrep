@@ -17,7 +17,7 @@ def do_test(tests, func):
 
         if type(actual_result) == float and isnan(result):
             assert isnan(actual_result), f'Expected nan but : actual {actual_result}'
-        elif type(actual_result) == list:
+        elif isinstance(actual_result, list) and all(type(i) == list for i in actual_result):
             flat_actual = flatten(actual_result)
             flat_result = flatten(result)
             unittest.TestCase().assertListEqual(flat_actual, flat_result), f'Error: {args} Expected {result} : actual {actual_result}'
@@ -25,3 +25,5 @@ def do_test(tests, func):
             assert actual_result == result, f'Error: {args} Expected {result} : actual {actual_result}'
     else:
         print('all pass')
+
+

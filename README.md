@@ -11,6 +11,8 @@ conda env create -f environment.yml
 
 conda activate py38-base
 
+python -m pip install utils
+
 jupyter-notebook
 ```
 
