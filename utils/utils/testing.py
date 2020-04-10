@@ -1,5 +1,6 @@
 from collections import namedtuple
 from math import isnan
+from utils.linked_list import ListNode
 import unittest
 
 
@@ -21,6 +22,8 @@ def do_test(tests, func):
             flat_actual = flatten(actual_result)
             flat_result = flatten(result)
             unittest.TestCase().assertListEqual(flat_actual, flat_result), f'Error: {args} Expected {result} : actual {actual_result}'
+        elif isinstance(actual_result, ListNode):
+            unittest.TestCase().assertListEqual(list(actual_result), result), f'Error: {args} Expected {result} : actual {list(actual_result)}'
         else:
             assert actual_result == result, f'Error: {args} Expected {result} : actual {actual_result}'
     else:
