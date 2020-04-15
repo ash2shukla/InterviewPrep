@@ -17,11 +17,13 @@ def assertEqualBinTrees(tree1: List[treenode] , tree2: List[treenode]):
             assert n1.parent_idx == n2.parent_idx, f"Node parents mismatch {n1, n2}"
             assert n1.alignment == n2.alignment, f"Node alignment mismatch {n1, n2}"
 
+
 def flatten(list_of_lists):
     flat_lst = []
     for lst in list_of_lists:
         flat_lst.extend(lst)
     return sorted(flat_lst)
+
 
 def do_test(tests, func):
     for args, result in tests:
