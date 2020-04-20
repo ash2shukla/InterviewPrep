@@ -14,7 +14,7 @@ def assertEqualBinTrees(tree1: List[treenode] , tree2: List[treenode]):
         assert len(tree1) == len(tree2), "Number of nodes are not same in trees."
         for n1, n2 in zip(tree1, tree2):
             assert n1.value == n2.value, f"Node values mismatch {n1, n2}"
-            assert n1.parent_idx == n2.parent_idx, f"Node parents mismatch {n1, n2}"
+            assert n1.parent_index == n2.parent_index, f"Node parents mismatch {n1, n2}"
             assert n1.alignment == n2.alignment, f"Node alignment mismatch {n1, n2}"
 
 
@@ -41,7 +41,7 @@ def do_test(tests, func):
         elif isinstance(actual_result, ListNode):
             unittest.TestCase().assertListEqual(list(actual_result), result), f'Error: {args} Expected {result} : actual {list(actual_result)}'
         elif isinstance(actual_result, TreeNode):
-            assertEqualBinTrees(actual_result, result)
+            assertEqualBinTrees(list(actual_result), result)
         else:
             assert actual_result == result, f'Error: {args} Expected {result} : actual {actual_result}'
     else:
